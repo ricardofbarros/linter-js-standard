@@ -11,6 +11,6 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "standard": "^2.10.0"
+    "standard": "^3.3.1"
   }
 }
