@@ -5,4 +5,4 @@ module.exports =
     jsStandardExecutablePath: path.join __dirname, '..', 'node_modules', 'standard', 'bin'
 
   activate: ->
-    console.log 'activate linter-js-standard'
+    console.log 'linter-js-standard activated'
