@@ -10,13 +10,11 @@ class LinterJsStandard extends Linter
 
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
-  cmd: ['cmd', '2>&1', '--verbose']
+  cmd: ['cmd', '--verbose']
 
   linterName: 'js-standard'
 
   errorStream: 'stderr'
-
-  errors: ['(jscs/parseError)']
 
   # A regex pattern used to extract information from the executable's output.
   regex:
@@ -33,6 +31,7 @@ class LinterJsStandard extends Linter
     super(editor)
 
     atom.config.observe 'linter-js-standard.jsStandardExecutablePath', @formatShellCmd
+    @cwd = null
 
   formatShellCmd: =>
     jshintExecutablePath = atom.config.get 'linter-js-standard.jsStandardExecutablePath'
