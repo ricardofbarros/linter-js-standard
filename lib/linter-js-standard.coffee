@@ -6,7 +6,7 @@ class LinterJsStandard extends Linter
 
   # The syntax that the linter handles. May be a string or
   # list/tuple of strings. Names should be all lowercase.
-  @syntax: ['source.js', 'source.js.jquery', 'text.html.basic']
+  @syntax: ['source.js', 'source.js.jsx', 'source.js.jquery', 'text.html.basic']
 
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
