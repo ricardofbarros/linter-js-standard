@@ -1,6 +1,7 @@
 linterPath = atom.packages.getLoadedPackage("linter").path
 Linter = require "#{linterPath}/lib/linter"
 {findFile, warn} = require "#{linterPath}/lib/utils"
+fs = require 'fs'
 
 class LinterJsStandard extends Linter
 
@@ -30,12 +31,27 @@ class LinterJsStandard extends Linter
   constructor: (editor) ->
     super(editor)
 
-    atom.config.observe 'linter-js-standard.jsStandardExecutablePath', @formatShellCmd
+    atom.config.observe 'linter-js-standard.jsStandardExecutablePath',
+      @formatShellCmd
+
     @cwd = null
 
-  formatShellCmd: =>
-    jshintExecutablePath = atom.config.get 'linter-js-standard.jsStandardExecutablePath'
-    @executablePath = "#{jshintExecutablePath}"
+  formatShellCmd: (standardPath) =>
+
+    ## If standard path
+    # isn't defined return early,
+    # try next time
+    if typeof standardPath == 'undefined'
+      return
+
+    executionPath =
+      standardPath + '/cmd.js'
+
+    if fs.existsSync executionPath
+      @executablePath = "#{standardPath}"
+    else
+      throw new Error 'Standard wasn\'t installed properly with linter-js-standard, please re-install the plugin.'
+
 
   formatMessage: (match) ->
     type = if match.error
