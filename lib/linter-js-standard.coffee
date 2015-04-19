@@ -15,7 +15,7 @@ class LinterJsStandard extends Linter
 
   linterName: 'js-standard'
 
-  errorStream: 'stderr'
+  errorStream: 'stdout'
 
   # A regex pattern used to extract information from the executable's output.
   regex:
