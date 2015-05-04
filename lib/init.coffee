@@ -1,8 +1,11 @@
 path = require 'path'
 
 module.exports =
-  configDefaults:
-    jsStandardExecutablePath: path.join __dirname, '..', 'node_modules', 'standard', 'bin'
+  config:
+    style:
+      type: 'string'
+      default: 'standard'
+      enum: ['standard', 'semi-standard']
 
   activate: ->
-    console.log 'linter-js-standard activated'
+    console.log 'linter-js-standard activatedd'
