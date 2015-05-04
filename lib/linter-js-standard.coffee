@@ -31,26 +31,41 @@ class LinterJsStandard extends Linter
   constructor: (editor) ->
     super(editor)
 
-    atom.config.observe 'linter-js-standard.jsStandardExecutablePath',
+    atom.config.observe 'linter-js-standard.style',
       @formatShellCmd
 
     @cwd = null
 
-  formatShellCmd: (standardPath) =>
-
-    ## If standard path
+  formatShellCmd: (style) =>
+    ## If style
     # isn't defined return early,
     # try next time
-    if typeof standardPath == 'undefined'
+    if typeof style == 'undefined'
       return
 
-    executionPath =
-      standardPath + '/cmd.js'
+    standardPath = path.join __dirname,
+      '..',
+      'node_modules',
+      'standard',
+      'bin'
+    semiStandardPath = path.join __dirname,
+      '..',
+      'node_modules',
+      'semistandard',
+      'bin'
 
-    if fs.existsSync executionPath
-      @executablePath = "#{standardPath}"
+    if style == 'standard'
+      @executablePath = standardPath
     else
-      throw new Error 'Standard wasn\'t installed properly with linter-js-standard, please re-install the plugin.'
+      @linterName = 'js-semistandard'
+      @executablePath = semiStandardPath
+
+    @executablePath += '/cmd.js'
+
+    if !fs.existsSync @executablePath
+      throw new Error 'Standard or Semistandard wasn\'t
+        installed properly with linter-js-standard,
+        please re-install the plugin.'
 
 
   formatMessage: (match) ->
