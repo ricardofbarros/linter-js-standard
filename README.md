@@ -1,7 +1,7 @@
 linter-js-standard
 =========================
 
-This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard).
+This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard) or [semistandard](https://github.com/Flet/semistandard).
 
 ## Installation
 Linter package must be installed in order to use this plugin. If Linter is not installed, please follow the instructions [here](https://github.com/AtomLinter/Linter).
@@ -10,6 +10,9 @@ Linter package must be installed in order to use this plugin. If Linter is not i
 ```
 $ apm install linter-js-standard
 ```
+
+## Change style (to semi or not to semi)
+You can change from standard to semistandard and vice versa in the plugin settings.
 
 ## Known issues
 
