@@ -19,10 +19,9 @@ class LinterJsStandard extends Linter
 
   # A regex pattern used to extract information from the executable's output.
   regex:
-    '^((?!.*?eslint\/undefined.*?)' +
-    '((?<file>.*?\\..*?(?=:))' +
-    '(:(?<line>[0-9]+):(?<col>[0-9]+):'+
-    '(?<message>.+)((?<error>\\(jscs\/parseError\\))|(?<warning>\\(.*\\))))))$'
+    '^(?<file>.*?\\..*?(?=:))' +
+    ':(?<line>[0-9]+):(?<col>[0-9]+):' +
+    '((?<message>.*?(?=\\())((?<error>.+undefined.*?)|(?<warning>.*?)))$'
 
   regexFlags: 'gm'
 
@@ -69,15 +68,12 @@ class LinterJsStandard extends Linter
 
 
   formatMessage: (match) ->
-    type = if match.error
-      "E"
-    else if match.warning
-      "W"
-    else
+    if !match.error && !match.warning
       warn "Regex does not match lint output", match
-      ""
 
-    "#{match.message} (#{type})"
+    ## Dunno why I need to do this
+    ## but if I dont it doesnt show a message
+    "#{match.message}"
 
 destroy: ->
   atom.config.unobserve 'linter-js-standard.jsStandardExecutablePath'
