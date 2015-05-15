@@ -2,6 +2,7 @@ linterPath = atom.packages.getLoadedPackage("linter").path
 Linter = require "#{linterPath}/lib/linter"
 {findFile, warn} = require "#{linterPath}/lib/utils"
 fs = require 'fs'
+path = require 'path'
 
 class LinterJsStandard extends Linter
 
