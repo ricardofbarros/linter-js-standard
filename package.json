@@ -3,7 +3,7 @@
   "main": "./lib/init",
   "linter-package": true,
   "activationCommands": [],
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Linter plugin for JavaScript Standard Style",
   "repository": "https://github.com/ricardofbarros/linter-js-standard.git",
   "license": "MIT",
