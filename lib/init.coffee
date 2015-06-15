@@ -6,6 +6,10 @@ module.exports =
       type: 'string'
       default: 'standard'
       enum: ['standard', 'semi-standard']
+    codeStyleDevDependencies:
+      type: 'boolean'
+      description: 'Check code style on devDependencies'
+      default: false
 
   activate: ->
-    console.log 'linter-js-standard activatedd'
+    console.log 'linter-js-standard activated'
