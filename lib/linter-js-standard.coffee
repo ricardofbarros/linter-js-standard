@@ -31,16 +31,21 @@ class LinterJsStandard extends Linter
   constructor: (editor) ->
     super(editor)
 
-    atom.config.observe 'linter-js-standard.style',
+    file = editor?.buffer.file
+    @filePath = file?.path
+
+    if !@filePath
+      throw new Error 'Couldn\'t get file path'
+
+    atom.config.observe 'linter-js-standard',
       @formatShellCmd
 
     @cwd = null
 
-  formatShellCmd: (style) =>
-    ## If style
-    # isn't defined return early,
-    # try next time
-    if typeof style == 'undefined'
+  formatShellCmd: (config) =>
+    ## If config isn't defined return early,
+    ## try next time
+    if typeof config == 'undefined'
       return
 
     standardPath = path.join __dirname,
@@ -54,13 +59,24 @@ class LinterJsStandard extends Linter
       'semistandard',
       'bin'
 
-    if style == 'standard'
-      @executablePath = standardPath
-    else
-      @linterName = 'js-semistandard'
-      @executablePath = semiStandardPath
+    if config.codeStyleDevDependencies
+      projectPath = atom.project.getPaths()
+      filePath = @filePath
 
-    @executablePath += '/cmd.js'
+      projectPath = projectPath.filter (path) ->
+        regex = new RegExp('^' + path)
+        return regex.test(filePath)
+
+      projectPath = projectPath[0]
+
+    else
+      if config.style == 'standard'
+        @executablePath = standardPath
+      else
+        @linterName = 'js-semistandard'
+        @executablePath = semiStandardPath
+
+      @executablePath += '/cmd.js'
 
     if !fs.existsSync @executablePath
       throw new Error 'Standard or Semistandard wasn\'t
