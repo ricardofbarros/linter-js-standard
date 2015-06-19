@@ -5,6 +5,11 @@
   "activationCommands": [],
   "version": "0.3.0",
   "description": "Linter plugin for JavaScript Standard Style",
+  "keywords": [
+    "javascript",
+    "standard",
+    "linter"
+  ],
   "repository": "https://github.com/ricardofbarros/linter-js-standard.git",
   "license": "MIT",
   "engines": {
