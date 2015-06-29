@@ -3,6 +3,7 @@ Linter = require "#{linterPath}/lib/linter"
 {findFile, warn} = require "#{linterPath}/lib/utils"
 fs = require 'fs'
 path = require 'path'
+pkgConfig = require 'pkg-config'
 
 class LinterJsStandard extends Linter
 
@@ -53,6 +54,7 @@ class LinterJsStandard extends Linter
       'node_modules',
       'standard',
       'bin'
+
     semiStandardPath = path.join __dirname,
       '..',
       'node_modules',
@@ -60,15 +62,16 @@ class LinterJsStandard extends Linter
       'bin'
 
     if config.codeStyleDevDependencies
-      projectPath = atom.project.getPaths()
-      filePath = @filePath
+      devDeps = pkgConfig(null, { cwd: @filePath, root: 'devDependencies' })
 
-      projectPath = projectPath.filter (path) ->
-        regex = new RegExp('^' + path)
-        return regex.test(filePath)
-
-      projectPath = projectPath[0]
-
+      if devDeps and (devDeps.standard or devDeps.semistandard)
+        if devDeps.standard
+          @executablePath = standardPath
+        else
+          @linterName = 'js-semistandard'
+          @executablePath = semiStandardPath
+      else
+        @executablePath = false
     else
       if config.style == 'standard'
         @executablePath = standardPath
@@ -76,12 +79,13 @@ class LinterJsStandard extends Linter
         @linterName = 'js-semistandard'
         @executablePath = semiStandardPath
 
+    if @executablePath
       @executablePath += '/cmd.js'
 
-    if !fs.existsSync @executablePath
-      throw new Error 'Standard or Semistandard wasn\'t
-        installed properly with linter-js-standard,
-        please re-install the plugin.'
+      if !fs.existsSync @executablePath
+        throw new Error 'Standard or Semistandard wasn\'t
+          installed properly with linter-js-standard,
+          please re-install the plugin.'
 
 
   formatMessage: (match) ->
