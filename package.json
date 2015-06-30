@@ -16,6 +16,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
+    "minimatch": "^2.0.8",
     "pkg-config": "^1.0.1",
     "semistandard": "^6.0.0",
     "standard": "^4.0.1"
