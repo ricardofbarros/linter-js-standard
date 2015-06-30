@@ -73,14 +73,15 @@ class LinterJsStandard extends Linter
           please re-install the plugin.'
 
   formatDevDepsExecPath: (devDeps) ->
+    # Default value
     execPath = false
 
     if devDeps and (devDeps.standard or devDeps.semistandard)
       if devDeps.standard
-        # Set path to standard
+        # Set execPath to standard bin
         # NOTE: this variable can be changed
         # along the logic flow
-        execPath = standardPath
+        execPath = binPath.standard
 
         # Get standard property from package.json
         options = { cwd: @filePath, root: 'standard' }
@@ -103,8 +104,32 @@ class LinterJsStandard extends Linter
           @cmd.push '--parser', standardOpts.parser
 
       else
+        # Set execPath to semistandard bin
+        # and change linter name
+        # NOTE: the execPath variable can be changed
+        # along the logic flow
         @linterName = 'js-semistandard'
-        execPath = semiStandardPath
+        execPath = binPath.semiStandard
+
+        # Get semistandard property from package.json
+        options = { cwd: @filePath, root: 'semistandard' }
+        semistandardOpts = pkgConfig(null, options) or {}
+
+        # If ignore glob patterns are present
+        if semistandardOpts.ignore
+          relativeFilePath = '' ## TODO get relative file path
+          ignoreGlobPatterns = []
+          ignoreGlobPatterns.concat semistandardOpts.ignore
+
+          testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
+            minimatch relativeFilePath pattern
+
+          if testGlobPatterns
+            execPath = false
+
+        # If parser is present
+        if semistandardOpts.parser
+          @cmd.push '--parser', semistandardOpts.parser
 
     execPath
 
