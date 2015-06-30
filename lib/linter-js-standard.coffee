@@ -4,6 +4,8 @@ Linter = require "#{linterPath}/lib/linter"
 fs = require 'fs'
 path = require 'path'
 pkgConfig = require 'pkg-config'
+binPath = require './bin-path.coffee'
+minimatch = require 'minimatch'
 
 class LinterJsStandard extends Linter
 
@@ -49,36 +51,19 @@ class LinterJsStandard extends Linter
     if typeof config == 'undefined'
       return
 
-    standardPath = path.join __dirname,
-      '..',
-      'node_modules',
-      'standard',
-      'bin'
-
-    semiStandardPath = path.join __dirname,
-      '..',
-      'node_modules',
-      'semistandard',
-      'bin'
-
     if config.codeStyleDevDependencies
       devDeps = pkgConfig(null, { cwd: @filePath, root: 'devDependencies' })
-
-      if devDeps and (devDeps.standard or devDeps.semistandard)
-        if devDeps.standard
-          @executablePath = standardPath
-        else
-          @linterName = 'js-semistandard'
-          @executablePath = semiStandardPath
-      else
-        @executablePath = false
+      @executablePath = @formatDevDepsExecPath(devDeps)
     else
       if config.style == 'standard'
-        @executablePath = standardPath
+        @executablePath = binPath.standard
       else
         @linterName = 'js-semistandard'
-        @executablePath = semiStandardPath
+        @executablePath = binPath.semiStandard
 
+    # Check if executablePath is defined,
+    # if isn't defined it means the file
+    # should not be linted
     if @executablePath
       @executablePath += '/cmd.js'
 
@@ -87,13 +72,47 @@ class LinterJsStandard extends Linter
           installed properly with linter-js-standard,
           please re-install the plugin.'
 
+  formatDevDepsExecPath: (devDeps) ->
+    execPath = false
+
+    if devDeps and (devDeps.standard or devDeps.semistandard)
+      if devDeps.standard
+        # Set path to standard
+        # NOTE: this variable can be changed
+        # along the logic flow
+        execPath = standardPath
+
+        # Get standard property from package.json
+        options = { cwd: @filePath, root: 'standard' }
+        standardOpts = pkgConfig(null, options) or {}
+
+        # If ignore glob patterns are present
+        if standardOpts.ignore
+          relativeFilePath = '' ## TODO get relative file path
+          ignoreGlobPatterns = []
+          ignoreGlobPatterns.concat standardOpts.ignore
+
+          testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
+            minimatch relativeFilePath pattern
+
+          if testGlobPatterns
+            execPath = false
+
+        # If parser is present
+        if standardOpts.parser
+          @cmd.push '--parser', standardOpts.parser
+
+      else
+        @linterName = 'js-semistandard'
+        execPath = semiStandardPath
+
+    execPath
 
   formatMessage: (match) ->
     if !match.error && !match.warning
       warn "Regex does not match lint output", match
 
-    ## Dunno why I need to do this
-    ## but if I dont it doesnt show a message
+    ## Return error/warning message
     "#{match.message}"
 
 destroy: ->
