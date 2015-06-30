@@ -6,6 +6,7 @@ path = require 'path'
 pkgConfig = require 'pkg-config'
 binPath = require './bin-path.coffee'
 minimatch = require 'minimatch'
+findRoot = require 'find-root'
 
 class LinterJsStandard extends Linter
 
@@ -76,6 +77,15 @@ class LinterJsStandard extends Linter
     # Default value
     execPath = false
 
+    # This is the absolute path
+    # of the project path relative
+    # to the package.json
+    projectPath = findRoot(@filePath)
+
+    # Get relative path of the filePath
+    relativeFilePath = @filePath.replace(projectPath, '')
+    relativeFilePath = relativeFilePath.substring(1)
+
     if devDeps and (devDeps.standard or devDeps.semistandard)
       if devDeps.standard
         # Set execPath to standard bin
@@ -89,12 +99,11 @@ class LinterJsStandard extends Linter
 
         # If ignore glob patterns are present
         if standardOpts.ignore
-          relativeFilePath = '' ## TODO get relative file path
           ignoreGlobPatterns = []
           ignoreGlobPatterns.concat standardOpts.ignore
 
           testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
-            minimatch relativeFilePath pattern
+            return minimatch(relativeFilePath, pattern)
 
           if testGlobPatterns
             execPath = false
@@ -117,12 +126,11 @@ class LinterJsStandard extends Linter
 
         # If ignore glob patterns are present
         if semistandardOpts.ignore
-          relativeFilePath = '' ## TODO get relative file path
           ignoreGlobPatterns = []
           ignoreGlobPatterns.concat semistandardOpts.ignore
 
           testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
-            minimatch relativeFilePath pattern
+            return minimatch(relativeFilePath, pattern)
 
           if testGlobPatterns
             execPath = false
