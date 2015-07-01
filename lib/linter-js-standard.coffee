@@ -52,7 +52,7 @@ class LinterJsStandard extends Linter
     if typeof config == 'undefined'
       return
 
-    if config.codeStyleDevDependencies
+    if config.checkStyleDevDependencies
       devDeps = pkgConfig(null, { cwd: @filePath, root: 'devDependencies' })
       @executablePath = @formatDevDepsExecPath(devDeps)
     else
