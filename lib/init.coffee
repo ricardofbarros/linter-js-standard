@@ -13,7 +13,7 @@ module.exports =
     honorStyleSettings:
       type: 'boolean'
       description: 'Honor standard/semistandard settings on pacakge.json'
-      defaukt: true
+      default: true
 
   activate: ->
     console.log 'linter-js-standard activated'
