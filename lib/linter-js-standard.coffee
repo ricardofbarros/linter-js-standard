@@ -52,16 +52,11 @@ class LinterJsStandard extends Linter
     if typeof config == 'undefined'
       return
 
-    styleSettings =
-      standard: pkgConfig(null, { cwd: @filePath, root: 'standard' })
-      semistandard: pkgConfig(null, { cwd: @filePath, root: 'semistandard' })
-
     # see if setting checkStyleDevDependencies is true
     # if not fallback to style value to decide which bin
     # we should use
     if config.checkStyleDevDependencies
-      devDeps = pkgConfig(null, { cwd: @filePath, root: 'devDependencies' })
-      @executablePath = @formatDevDepsExecPath(devDeps, styleSettings)
+      @checkDevDeps()
     else
       if config.style == 'standard'
         @linterName = 'js-standard'
@@ -72,16 +67,7 @@ class LinterJsStandard extends Linter
 
     # see if setting honorStyleSettings is true
     if config.honorStyleSettings
-      # If linter is standard and parser is present
-      # else if linter is semiStandard and parser is present
-      if @linterName == 'js-standard' and
-      styleSettings.standard and
-      styleSettings.standard.parser
-        @cmd.push '--parser', styleSettings.standard.parser
-      else if @linterName == 'js-standard' and
-      styleSettings.semistandard and
-      styleSettings.semistandard.parser
-        @cmd.push '--parser', styleSettings.semistandard.parser
+      @checkStyleSettings()
 
     # Check if executablePath is defined,
     # if isn't defined it means the file
@@ -97,9 +83,29 @@ class LinterJsStandard extends Linter
       # No style path!
       @executablePath = path.resolve(__dirname, 'no-style.js')
 
-  formatDevDepsExecPath: (devDeps, styleSettings) ->
+  checkDevDeps: () ->
+    # This get devDependencies property
+    # from the nearest package.json
+    devDeps = pkgConfig(null, { cwd: @filePath, root: 'devDependencies' })
+
+    if devDeps and (devDeps.standard or devDeps.semistandard)
+      if devDeps.standard
+        # Set execPath to standard bin
+        # and change linter name
+        @linterName = 'js-standard'
+        @executablePath = binPath.standard
+
+      else
+        # Set execPath to semistandard bin
+        # and change linter name
+        @linterName = 'js-semistandard'
+        @executablePath = binPath.semiStandard
+    else
+      @executablePath = false
+
+  checkStyleSettings: () ->
     # Default value
-    execPath = false
+    styleSettings = false
 
     # This is the absolute path
     # of the project path relative
@@ -110,46 +116,26 @@ class LinterJsStandard extends Linter
     relativeFilePath = @filePath.replace(projectPath, '')
     relativeFilePath = relativeFilePath.substring(1)
 
-    if devDeps and (devDeps.standard or devDeps.semistandard)
-      if devDeps.standard
-        # Set execPath to standard bin
-        # and change linter name
-        # NOTE: this variable can be changed
-        # along the logic flow
-        @linterName = 'js-standard'
-        execPath = binPath.standard
+    if @linterName == 'js-standard'
+      styleSettings = pkgConfig(null, { cwd: @filePath, root: 'standard' })
+    else if @linterName == 'js-semistandard'
+      styleSettings = pkgConfig(null, { cwd: @filePath, root: 'semistandard' })
 
-        # If ignore glob patterns are present
-        if styleSettings.standard.ignore
-          ignoreGlobPatterns = []
-          ignoreGlobPatterns = ignoreGlobPatterns.concat styleSettings.standard.ignore
+    if styleSettings
+      # Check parser
+      if styleSettings.parser
+        @cmd.push '--parser', styleSettings.parser
 
-          testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
-            return minimatch(relativeFilePath, pattern)
+      # If ignore glob patterns are present
+      if styleSettings.ignore
+        ignoreGlobPatterns = []
+        ignoreGlobPatterns = ignoreGlobPatterns.concat styleSettings.ignore
 
-          if testGlobPatterns
-            execPath = false
+        testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
+          return minimatch(relativeFilePath, pattern)
 
-      else
-        # Set execPath to semistandard bin
-        # and change linter name
-        # NOTE: the execPath variable can be changed
-        # along the logic flow
-        @linterName = 'js-semistandard'
-        execPath = binPath.semiStandard
-
-        # If ignore glob patterns are present
-        if styleSettings.semistandard.ignore
-          ignoreGlobPatterns = []
-          ignoreGlobPatterns = ignoreGlobPatterns.concat styleSettings.semistandard.ignore
-
-          testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
-            return minimatch(relativeFilePath, pattern)
-
-          if testGlobPatterns
-            execPath = false
-
-    execPath
+        if testGlobPatterns
+          @executablePath = false
 
   formatMessage: (match) ->
     if !match.error && !match.warning
