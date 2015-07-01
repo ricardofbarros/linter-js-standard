@@ -10,6 +10,10 @@
     "standard",
     "linter"
   ],
+  "author": {
+    "name": "Ricardo Barros",
+    "email": "ricardofbarros@hotmail.com"
+  },
   "repository": "https://github.com/ricardofbarros/linter-js-standard.git",
   "license": "MIT",
   "engines": {
