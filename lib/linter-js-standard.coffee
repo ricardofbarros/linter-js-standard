@@ -57,6 +57,7 @@ class LinterJsStandard extends Linter
       @executablePath = @formatDevDepsExecPath(devDeps)
     else
       if config.style == 'standard'
+        @linterName = 'js-standard'
         @executablePath = binPath.standard
       else
         @linterName = 'js-semistandard'
@@ -89,8 +90,10 @@ class LinterJsStandard extends Linter
     if devDeps and (devDeps.standard or devDeps.semistandard)
       if devDeps.standard
         # Set execPath to standard bin
+        # and change linter name
         # NOTE: this variable can be changed
         # along the logic flow
+        @linterName = 'js-standard'
         execPath = binPath.standard
 
         # Get standard property from package.json
