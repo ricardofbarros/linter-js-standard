@@ -74,9 +74,13 @@ class LinterJsStandard extends Linter
     if config.honorStyleSettings
       # If linter is standard and parser is present
       # else if linter is semiStandard and parser is present
-      if @linterName == 'js-standard' and styleSettings.standard.parser
+      if @linterName == 'js-standard' and
+      styleSettings.standard and
+      styleSettings.standard.parser
         @cmd.push '--parser', styleSettings.standard.parser
-      else if @linterName == 'js-standard' and styleSettings.semistandard.parser
+      else if @linterName == 'js-standard' and
+      styleSettings.semistandard and
+      styleSettings.semistandard.parser
         @cmd.push '--parser', styleSettings.semistandard.parser
 
     # Check if executablePath is defined,
