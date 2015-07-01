@@ -93,6 +93,9 @@ class LinterJsStandard extends Linter
         throw new Error 'Standard or Semistandard wasn\'t
           installed properly with linter-js-standard,
           please re-install the plugin.'
+    else
+      # No style path!
+      @executablePath = path.resolve(__dirname, 'no-style.js')
 
   formatDevDepsExecPath: (devDeps, styleSettings) ->
     # Default value
