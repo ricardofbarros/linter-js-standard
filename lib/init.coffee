@@ -6,11 +6,11 @@ module.exports =
       type: 'string'
       default: 'standard'
       enum: ['standard', 'semi-standard']
-    codeStyleDevDependencies:
+    checkStyleDevDependencies:
       type: 'boolean'
       description: 'Check code style on package.json devDependencies'
       default: false
-    honorStandardSettings:
+    honorStyleSettings:
       type: 'boolean'
       description: 'Honor standard/semistandard settings on pacakge.json'
       defaukt: true
