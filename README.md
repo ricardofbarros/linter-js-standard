@@ -13,10 +13,10 @@ $ apm install linter-js-standard
 
 ## Settings
 
-### codeStyleDevDependencies (default: false)
+### checkStyleDevDependencies (default: false)
 Check code style in package.json devDependencies.
 
-### honorStandardSettings (default: true)
+### honorStyleSettings (default: true)
 Honoring `ignore` and `parser` in package.json
 
 ### style (default: standard)
