@@ -1,3 +1,5 @@
+path = require 'path'
+
 module.exports =
   standard: path.join __dirname,
     '..',
