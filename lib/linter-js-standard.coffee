@@ -14,10 +14,6 @@ class LinterJsStandard extends Linter
   # list/tuple of strings. Names should be all lowercase.
   @syntax: ['source.js', 'source.js.jsx', 'source.js.jquery']
 
-  # A string, list, tuple or callable that returns a string, list or tuple,
-  # containing the command line (with arguments) used to lint.
-  cmd: ['cmd', '--verbose']
-
   linterName: 'js-standard'
 
   errorStream: 'stdout'
@@ -34,6 +30,10 @@ class LinterJsStandard extends Linter
 
   constructor: (editor) ->
     super(editor)
+
+    # A string, list, tuple or callable that returns a string, list or tuple,
+    # containing the command line (with arguments) used to lint.
+    @cmd = ['cmd', '--verbose']
 
     file = editor?.buffer.file
     @filePath = file?.path
@@ -52,9 +52,16 @@ class LinterJsStandard extends Linter
     if typeof config == 'undefined'
       return
 
+    styleSettings =
+      standard: pkgConfig(null, { cwd: @filePath, root: 'standard' })
+      semistandard: pkgConfig(null, { cwd: @filePath, root: 'semistandard' })
+
+    # see if setting checkStyleDevDependencies is true
+    # if not fallback to style value to decide which bin
+    # we should use
     if config.checkStyleDevDependencies
       devDeps = pkgConfig(null, { cwd: @filePath, root: 'devDependencies' })
-      @executablePath = @formatDevDepsExecPath(devDeps)
+      @executablePath = @formatDevDepsExecPath(devDeps, styleSettings)
     else
       if config.style == 'standard'
         @linterName = 'js-standard'
@@ -62,6 +69,15 @@ class LinterJsStandard extends Linter
       else
         @linterName = 'js-semistandard'
         @executablePath = binPath.semiStandard
+
+    # see if setting honorStyleSettings is true
+    if config.honorStyleSettings
+      # If linter is standard and parser is present
+      # else if linter is semiStandard and parser is present
+      if @linterName == 'js-standard' and styleSettings.standard.parser
+        @cmd.push '--parser', styleSettings.standard.parser
+      else if @linterName == 'js-standard' and styleSettings.semistandard.parser
+        @cmd.push '--parser', styleSettings.semistandard.parser
 
     # Check if executablePath is defined,
     # if isn't defined it means the file
@@ -74,7 +90,7 @@ class LinterJsStandard extends Linter
           installed properly with linter-js-standard,
           please re-install the plugin.'
 
-  formatDevDepsExecPath: (devDeps) ->
+  formatDevDepsExecPath: (devDeps, styleSettings) ->
     # Default value
     execPath = false
 
@@ -96,24 +112,16 @@ class LinterJsStandard extends Linter
         @linterName = 'js-standard'
         execPath = binPath.standard
 
-        # Get standard property from package.json
-        options = { cwd: @filePath, root: 'standard' }
-        standardOpts = pkgConfig(null, options) or {}
-
         # If ignore glob patterns are present
-        if standardOpts.ignore
+        if styleSettings.standard.ignore
           ignoreGlobPatterns = []
-          ignoreGlobPatterns = ignoreGlobPatterns.concat semistandardOpts.ignore
+          ignoreGlobPatterns = ignoreGlobPatterns.concat styleSettings.standard.ignore
 
           testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
             return minimatch(relativeFilePath, pattern)
 
           if testGlobPatterns
             execPath = false
-
-        # If parser is present
-        if standardOpts.parser
-          @cmd.push '--parser', standardOpts.parser
 
       else
         # Set execPath to semistandard bin
@@ -123,24 +131,16 @@ class LinterJsStandard extends Linter
         @linterName = 'js-semistandard'
         execPath = binPath.semiStandard
 
-        # Get semistandard property from package.json
-        options = { cwd: @filePath, root: 'semistandard' }
-        semistandardOpts = pkgConfig(null, options) or {}
-
         # If ignore glob patterns are present
-        if semistandardOpts.ignore
+        if styleSettings.semistandard.ignore
           ignoreGlobPatterns = []
-          ignoreGlobPatterns = ignoreGlobPatterns.concat semistandardOpts.ignore
+          ignoreGlobPatterns = ignoreGlobPatterns.concat styleSettings.semistandard.ignore
 
           testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
             return minimatch(relativeFilePath, pattern)
 
           if testGlobPatterns
             execPath = false
-
-        # If parser is present
-        if semistandardOpts.parser
-          @cmd.push '--parser', semistandardOpts.parser
 
     execPath
 
