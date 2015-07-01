@@ -100,7 +100,7 @@ class LinterJsStandard extends Linter
         # If ignore glob patterns are present
         if standardOpts.ignore
           ignoreGlobPatterns = []
-          ignoreGlobPatterns.concat standardOpts.ignore
+          ignoreGlobPatterns = ignoreGlobPatterns.concat semistandardOpts.ignore
 
           testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
             return minimatch(relativeFilePath, pattern)
@@ -127,7 +127,7 @@ class LinterJsStandard extends Linter
         # If ignore glob patterns are present
         if semistandardOpts.ignore
           ignoreGlobPatterns = []
-          ignoreGlobPatterns.concat semistandardOpts.ignore
+          ignoreGlobPatterns = ignoreGlobPatterns.concat semistandardOpts.ignore
 
           testGlobPatterns = ignoreGlobPatterns.some (pattern) ->
             return minimatch(relativeFilePath, pattern)
