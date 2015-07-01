@@ -13,17 +13,30 @@ Linter package must be installed in order to use this plugin. If Linter is not i
 $ apm install linter-js-standard
 ```
 
+## Features
+- Support `standard` and `semistandard` styles.
+- Support ignore glob patterns in package.json.
+- Support custom parsers in package.json.
+
 ## Settings
 
 ### checkStyleDevDependencies (default: false)
-Check code style in package.json devDependencies.
+Check code style in package.json `devDependencies`. If a valid style is not found it won't lint.
+
+> Note: This will use the nearest package.json.
 
 ### honorStyleSettings (default: true)
-Honoring `ignore` and `parser` in package.json
+Honors style settings defined in package.json.
+
+Current style settings supported:
+- `ignore`
+- `parser`
+
+> Note: This will use the nearest package.json.
 
 ### style (default: standard)
-You can switch between standard and semistandard styles.
-If the setting `codeStyleDevDependencies` is on this setting will be **ignored**.
+Switch between standard and semistandard styles.
+If `checkStyleDevDependencies` is true this setting will be **ignored**.
 
 ## License
 MIT
