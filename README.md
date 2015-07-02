@@ -18,6 +18,13 @@ $ apm install linter-js-standard
 - Support ignore glob patterns in package.json.
 - Support custom parsers in package.json.
 
+Custom parsers currently supported:
+- esprima
+- esprima-fb
+- babel-eslint
+
+> Note: If a custom parser is missing from this list please make a PR by adding the missing parser to package.json dependencies.
+
 ## Settings
 
 ### checkStyleDevDependencies (default: false)
