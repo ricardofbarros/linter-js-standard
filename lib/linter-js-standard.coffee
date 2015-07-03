@@ -110,7 +110,10 @@ class LinterJsStandard extends Linter
     # This is the absolute path
     # of the project path relative
     # to the package.json
-    projectPath = findRoot(@filePath)
+    try
+      projectPath = findRoot(@filePath)
+    catch
+      return
 
     # Get relative path of the filePath
     relativeFilePath = @filePath.replace(projectPath, '')
