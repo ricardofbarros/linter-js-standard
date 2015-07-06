@@ -86,7 +86,8 @@ class LinterJsStandard extends Linter
   checkDevDeps: () ->
     # This get devDependencies property
     # from the nearest package.json
-    devDeps = pkgConfig(null, { cwd: @filePath, root: 'devDependencies' })
+    options = { cwd: @filePath, root: 'devDependencies', cache: false }
+    devDeps = pkgConfig(null, options)
 
     if devDeps and (devDeps.standard or devDeps.semistandard)
       if devDeps.standard
@@ -119,10 +120,13 @@ class LinterJsStandard extends Linter
     relativeFilePath = @filePath.replace(projectPath, '')
     relativeFilePath = relativeFilePath.substring(1)
 
+    options = { cwd: @filePath, root: 'standard', cache: false }
+
     if @linterName == 'js-standard'
-      styleSettings = pkgConfig(null, { cwd: @filePath, root: 'standard' })
+      styleSettings = pkgConfig(null, options)
     else if @linterName == 'js-semistandard'
-      styleSettings = pkgConfig(null, { cwd: @filePath, root: 'semistandard' })
+      options.root = 'semistandard'
+      styleSettings = pkgConfig(null, options)
 
     if styleSettings
       # Check parser
