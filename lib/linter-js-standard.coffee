@@ -61,6 +61,9 @@ class LinterJsStandard extends Linter
       if config.style == 'standard'
         @linterName = 'js-standard'
         @executablePath = binPath.standard
+      else if config.style == 'happiness'
+        @linterName = 'js-happiness'
+        @executablePath = binPath.happiness
       else
         @linterName = 'js-semistandard'
         @executablePath = binPath.semiStandard
@@ -96,6 +99,12 @@ class LinterJsStandard extends Linter
         @linterName = 'js-standard'
         @executablePath = binPath.standard
 
+      else if devDeps.happiness
+        # Set execPath to happiness bin
+        # and change linter name
+        @linterName = 'js-happiness'
+        @executablePath = binPath.happiness
+
       else
         # Set execPath to semistandard bin
         # and change linter name
@@ -126,6 +135,9 @@ class LinterJsStandard extends Linter
       styleSettings = pkgConfig(null, options)
     else if @linterName == 'js-semistandard'
       options.root = 'semistandard'
+      styleSettings = pkgConfig(null, options)
+    else if @linterName == 'js-happiness'
+      options.root = 'happiness'
       styleSettings = pkgConfig(null, options)
 
     if styleSettings

@@ -5,7 +5,7 @@ module.exports =
     style:
       type: 'string'
       default: 'standard'
-      enum: ['standard', 'semi-standard']
+      enum: ['standard', 'semi-standard', 'happiness']
     checkStyleDevDependencies:
       type: 'boolean'
       description: 'Check code style on package.json devDependencies'

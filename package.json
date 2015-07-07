@@ -24,6 +24,7 @@
     "esprima": "^2.4.1",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "find-root": "^0.1.1",
+    "happiness": "^1.0.7",
     "minimatch": "^2.0.8",
     "pkg-config": "^1.1.0",
     "semistandard": "^6.1.1",

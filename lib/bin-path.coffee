@@ -12,3 +12,9 @@ module.exports =
     'node_modules',
     'semistandard',
     'bin'
+
+  happiness: path.join __dirname,
+    '..',
+    'node_modules',
+    'happiness',
+    'bin'
