@@ -1,7 +1,7 @@
 linter-js-standard
 =========================
 
-This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard) or [semistandard](https://github.com/Flet/semistandard).
+This plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard), [semistandard](https://github.com/Flet/semistandard) or [happiness](https://github.com/JedWatson/happiness).
 
 ![demo](https://cloud.githubusercontent.com/assets/6867996/8457085/4bd7575e-2007-11e5-9762-e3f942b78232.gif)
 
@@ -14,7 +14,7 @@ $ apm install linter-js-standard
 ```
 
 ## Features
-- Support `standard` and `semistandard` styles.
+- Support `standard`, `semistandard` and `happiness` styles.
 - Support ignore glob patterns in package.json.
 - Support custom parsers in package.json.
 
