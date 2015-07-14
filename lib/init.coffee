@@ -12,7 +12,7 @@ module.exports =
       default: false
     honorStyleSettings:
       type: 'boolean'
-      description: 'Honor standard/semistandard settings on pacakge.json'
+      description: 'Honor standard/semistandard settings on package.json'
       default: true
 
   activate: ->
