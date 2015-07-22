@@ -1,7 +1,6 @@
 {
   "name": "linter-js-standard",
   "main": "./lib/init.js",
-  "linter-package": true,
   "activationCommands": [],
   "version": "2.0.0",
   "description": "Linter plugin for JavaScript Standard Style",
