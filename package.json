@@ -1,6 +1,6 @@
 {
   "name": "linter-js-standard",
-  "main": "./lib/init",
+  "main": "./lib/init.js",
   "linter-package": true,
   "activationCommands": [],
   "version": "1.2.0",
@@ -20,6 +20,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
+    "atom-linter": "^2.0.1",
     "babel-eslint": "^3.1.20",
     "esprima": "^2.4.1",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
@@ -28,6 +29,17 @@
     "minimatch": "^2.0.8",
     "pkg-config": "^1.1.0",
     "semistandard": "^6.1.1",
-    "standard": "^4.5.1"
+    "standard": "^4.5.1",
+    "xregexp": "^2.0.0"
+  },
+  "devDependencies": {
+    "standard": "^4.5.4"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
   }
 }
