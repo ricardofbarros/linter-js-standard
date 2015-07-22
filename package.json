@@ -28,7 +28,7 @@
     "minimatch": "^2.0.8",
     "pkg-config": "^1.1.0",
     "semistandard": "^6.1.1",
-    "standard": "^4.5.1",
+    "standard": "5.0.0-3",
     "xregexp": "^2.0.0"
   },
   "devDependencies": {
