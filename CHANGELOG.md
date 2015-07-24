@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 2.1.0 (2015-07-24)
 ### Added
-- Supported to global vars in package.json
+- Support global vars in package.json
 
 ## 2.0.4 (2015-07-23)
 ### Fixed
