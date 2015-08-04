@@ -17,7 +17,7 @@ $ apm install linter-js-standard
 - Support `standard`, `semistandard` and `happiness` styles.
 - Support ignore glob patterns in package.json.
 - Support custom parsers in package.json.
-- Support global variables in package.json _(currently only supported by standard)_
+- Support global variables in package.json _(supported by standard and semistandard)_
 
 Custom parsers currently supported:
 - esprima
