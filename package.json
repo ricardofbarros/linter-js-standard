@@ -28,11 +28,11 @@
     "minimatch": "^2.0.8",
     "pkg-config": "^1.1.0",
     "semistandard": "^7.0.2",
-    "standard": "5.0.0-4",
+    "standard": "^5.0.0",
     "xregexp": "^2.0.0"
   },
   "devDependencies": {
-    "standard": "^4.5.4"
+    "standard": "^5.0.0"
   },
   "providedServices": {
     "linter": {
