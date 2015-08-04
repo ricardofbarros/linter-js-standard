@@ -27,7 +27,7 @@
     "happiness": "^1.0.7",
     "minimatch": "^2.0.8",
     "pkg-config": "^1.1.0",
-    "semistandard": "^6.1.1",
+    "semistandard": "^7.0.2",
     "standard": "5.0.0-4",
     "xregexp": "^2.0.0"
   },
