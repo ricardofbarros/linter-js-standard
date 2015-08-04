@@ -2,12 +2,20 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.3.0 (2015-08-04)
+### Changed
+- Dependencies update
+  - :arrow_up: standard@^5.0.0
+  - :arrow_up: semistandard@^7.0.2
+
 ## 2.2.0 (2015-07-24)
 ### Changed
 - Switched from using file path to `stdin`
 - Dependencies update
   - :arrow_up: atotm-linter@^3.0.0
-- Fix permanently [issue 30](https://github.com/ricardofbarros/linter-js-standard/issues/30) 
+
+### Fixed  
+- Fix permanently [issue 30](https://github.com/ricardofbarros/linter-js-standard/issues/30)
 
 ## 2.1.0 (2015-07-24)
 ### Added
