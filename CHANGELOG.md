@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.4.0 (2015-08-04)
+### Added
+- New setting `showEslintRules`: Enable/disable show eslint rule name
+
 ## 2.3.0 (2015-08-04)
 ### Changed
 - Dependencies update
