@@ -46,5 +46,12 @@ Current style settings supported:
 Switch between standard and semistandard styles.
 If `checkStyleDevDependencies` is true this setting will be **ignored**.
 
+### showEslintRules (default: false)
+Enable/disable showing the name of the offended eslint rule.
+
+Example of messages while showEslintRules is:
+- **true:** Extra semicolon. (semi)
+- **false:** Extra semicolon.
+
 ## License
 MIT
