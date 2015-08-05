@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 2.4.0 (2015-08-04)
 ### Added
 - New setting `showEslintRules`: Enable/disable show eslint rule name
+  - Feature requested in [issue #39](https://github.com/ricardofbarros/linter-js-standard/issues/39)
 
 ## 2.3.0 (2015-08-04)
 ### Changed
@@ -19,7 +20,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
   - :arrow_up: atotm-linter@^3.0.0
 
 ### Fixed  
-- Fix permanently [issue 30](https://github.com/ricardofbarros/linter-js-standard/issues/30)
+- Fix permanently [issue #30](https://github.com/ricardofbarros/linter-js-standard/issues/30)
 
 ## 2.1.0 (2015-07-24)
 ### Added
