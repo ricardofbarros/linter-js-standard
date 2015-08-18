@@ -33,6 +33,9 @@
   "devDependencies": {
     "standard": "^5.0.0"
   },
+  "standard": {
+    "globals": ["atom"]
+  },
   "providedServices": {
     "linter": {
       "versions": {
