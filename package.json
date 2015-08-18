@@ -19,7 +19,6 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "atom-linter": "^3.0.0",
     "babel-eslint": "^3.1.20",
     "esprima": "^2.4.1",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
