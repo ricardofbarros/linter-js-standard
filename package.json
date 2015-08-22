@@ -2,7 +2,7 @@
   "name": "linter-js-standard",
   "main": "./lib/init.js",
   "activationCommands": [],
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Linter plugin for JavaScript Standard Style",
   "keywords": [
     "javascript",
@@ -23,17 +23,19 @@
     "esprima": "^2.4.1",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "find-root": "^0.1.1",
-    "happiness": "^1.0.7",
     "minimatch": "^2.0.8",
     "pkg-config": "^1.1.0",
-    "semistandard": "^7.0.2",
-    "standard": "^5.0.0"
+    "semistandard": "7.0.2",
+    "standard": "5.1.0",
+    "happiness": "1.0.7"
   },
   "devDependencies": {
     "standard": "^5.0.0"
   },
   "standard": {
-    "globals": ["atom"]
+    "globals": [
+      "atom"
+    ]
   },
   "providedServices": {
     "linter": {
