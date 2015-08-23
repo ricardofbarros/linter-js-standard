@@ -47,10 +47,10 @@ Switch between standard and semistandard styles.
 If `checkStyleDevDependencies` is true this setting will be **ignored**.
 
 ### showEslintRules (default: false)
-Enable/disable showing the name of the offended eslint rule.
+Enable/disable showing the id of the offended eslint rules.
 
-### lintMarkdownFiles
-Enable/disable lint on javascript fenced code blocks in Markdown files.
+### lintMarkdownFiles (default: false)
+Lint markdown fenced code blocks.
 
 Example of messages while showEslintRules is:
 - **true:** Extra semicolon. (semi)
