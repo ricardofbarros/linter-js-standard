@@ -4,8 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 3.0.2 (2015-09-03)
 ### Fixed
-  - Semistandard stop working after you use standard style
-  - Linter doesn't lint when `Markdown linting` option is disabled
+- Semistandard stop working after you use standard style
+- Linter doesn't lint when `Markdown linting` option is disabled
 
 ## 3.0.1 (2015-09-03)
 ### Added
