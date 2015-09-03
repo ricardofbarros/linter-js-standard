@@ -23,11 +23,13 @@
     "esprima": "^2.4.1",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "find-root": "^0.1.1",
+    "happiness": "1.0.7",
+    "loophole": "^1.1.0",
     "minimatch": "^2.0.8",
     "pkg-config": "^1.1.0",
+    "q": "^1.4.1",
     "semistandard": "7.0.2",
-    "standard": "5.1.0",
-    "happiness": "1.0.7"
+    "standard": "5.1.0"
   },
   "devDependencies": {
     "standard": "^5.0.0"
