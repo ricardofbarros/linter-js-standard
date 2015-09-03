@@ -49,12 +49,12 @@ If `checkStyleDevDependencies` is true this setting will be **ignored**.
 ### showEslintRules (default: false)
 Enable/disable showing the id of the offended eslint rules.
 
-### lintMarkdownFiles (default: false)
-Lint markdown fenced code blocks.
-
 Example of messages while showEslintRules is:
 - **true:** Extra semicolon. (semi)
 - **false:** Extra semicolon.
+
+### lintMarkdownFiles (default: false)
+Lint markdown fenced code blocks.
 
 ## License
 MIT
