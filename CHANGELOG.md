@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0 (2015-09-03)
+### Added
+- Support fenced code lint in markdown files
+
+### Fixed
+- Annoying warning message in [issue #37](https://github.com/ricardofbarros/linter-js-standard/issues/37)
+
+### Changed
+- Subscription event to cache file package.json settings to `.onDidChangeActivePaneItem`. This solved [issue #37](https://github.com/ricardofbarros/linter-js-standard/issues/37)
+- Use the linter's node.js API instead of a `child_process.execFile()` call, making the linter supaaa fast!
+Partially suggested in [issue #38](https://github.com/ricardofbarros/linter-js-standard/issues/37).
+- Use a static version for the linters instead of `^x.x.x`
+
 ## 2.4.0 (2015-08-04)
 ### Added
 - New setting `showEslintRules`: Enable/disable show eslint rule name
