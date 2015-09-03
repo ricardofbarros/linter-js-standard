@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 3.0.0 (2015-09-03)
+## 3.0.1 (2015-09-03)
 ### Added
 - Support fenced code lint in markdown files
 
