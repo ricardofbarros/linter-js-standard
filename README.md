@@ -18,6 +18,7 @@ $ apm install linter-js-standard
 - Support ignore glob patterns in package.json.
 - Support custom parsers in package.json.
 - Support global variables in package.json _(supported by standard and semistandard)_
+- Support fenced code lint in markdown files
 
 Custom parsers currently supported:
 - esprima
