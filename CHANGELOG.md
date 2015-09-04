@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.1.0 (2015-09-04)
+### Changed
+- Dependencies update
+  - :arrow_up: standard@5.2.1
+  - :arrow_up: babel-eslint@4.1.1
+
 ## 3.0.2 (2015-09-03)
 ### Fixed
 - Semistandard stop working after you use standard style
