@@ -1,5 +1,6 @@
 linter-js-standard
 =========================
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 This plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard), [semistandard](https://github.com/Flet/semistandard) or [happiness](https://github.com/JedWatson/happiness).
 
