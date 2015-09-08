@@ -19,6 +19,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
+    "atom-package-deps": "^2.0.5",
     "babel-eslint": "^4.1.1",
     "esprima": "^2.4.1",
     "esprima-fb": "^15001.1.0-dev-harmony-fb",
@@ -39,6 +40,9 @@
       "atom"
     ]
   },
+  "package-deps": [
+    "linter"
+  ],
   "providedServices": {
     "linter": {
       "versions": {
