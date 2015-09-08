@@ -2,9 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.2.0 (2015-09-08)
+### Added
+- Dependencies:
+  - atom-package-deps@^2.0.5
+
+> NOTE: From this version and on `linter-js-standard` doesn't need `linter` installed beforehand.
+
 ## 3.1.0 (2015-09-04)
 ### Changed
-- Dependencies update
+- Dependencies update:
   - :arrow_up: standard@5.2.1
   - :arrow_up: babel-eslint@4.1.1
 
