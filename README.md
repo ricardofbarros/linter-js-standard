@@ -58,5 +58,23 @@ Example of messages while showEslintRules is:
 ### lintMarkdownFiles (default: false)
 Lint markdown fenced code blocks.
 
+### Global Variable Support
+To have the linter ignore global variables, add a section to your package.json:
+```
+"semistandard": {
+    "globals": [
+      "var1",
+      "var2"
+    ]
+  }
+  OR
+"standard": {
+    "globals": [
+      "var1",
+      "var2
+    ]
+  }
+  ```
+If honorStyleSettings is checked/true, the linter will not warn about endeclared variables that are listed in the globals array.
 ## License
 MIT
