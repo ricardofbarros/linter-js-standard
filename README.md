@@ -75,6 +75,6 @@ To have the linter ignore global variables, add a section to your package.json:
     ]
   }
   ```
-If honorStyleSettings is checked/true, the linter will not warn about endeclared variables that are listed in the globals array.
+If honorStyleSettings is checked/true, the linter will not warn about undeclared variables that are listed in the globals array.
 ## License
 MIT
