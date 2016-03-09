@@ -59,7 +59,7 @@ Example of messages while showEslintRules is:
 Lint markdown fenced code blocks.
 
 ### Global Variable Support
-To have the linter ignore global variables, add a section to your package.json:
+To have the linter not warn about undeclared variables when using global variables, honorStyleSettings has to be checked/true and a "globals" section has to be added to package.json:
 ```
 "semistandard": {
     "globals": [
@@ -75,6 +75,7 @@ To have the linter ignore global variables, add a section to your package.json:
     ]
   }
   ```
-If honorStyleSettings is checked/true, the linter will not warn about undeclared variables that are listed in the globals array.
+Also see https://github.com/feross/standard#i-use-a-library-that-pollutes-the-global-namespace-how-do-i-prevent-variable-is-not-defined-errors.
+
 ## License
 MIT
