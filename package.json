@@ -31,7 +31,7 @@
     "pkg-config": "^1.1.0",
     "q": "^1.4.1",
     "semistandard": "7.0.2",
-    "standard": "5.2.1",
+    "standard": "^6.0.0",
     "uber-standard": "^4.0.1"
   },
   "devDependencies": {
