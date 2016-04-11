@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.3.0 (2016-04-11)
+### Added
+- [Uses the linter your package depends on rather than the internal dependency whenever possible.](https://github.com/ricardofbarros/linter-js-standard/pull/101)
+
+### Changed
+- Option `checkDevDependencies` default to `true`
+
 ## 3.2.0 (2015-09-08)
 ### Added
 - Dependencies:
