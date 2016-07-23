@@ -71,7 +71,7 @@ To have the linter not warn about undeclared variables when using global variabl
 "standard": {
     "globals": [
       "var1",
-      "var2
+      "var2"
     ]
   }
   ```
