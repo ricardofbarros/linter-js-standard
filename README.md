@@ -31,7 +31,7 @@ Custom parsers currently supported:
 ## Settings
 
 ### checkStyleDevDependencies (default: false)
-Check code style in package.json `devDependencies`. If a valid style is not found it won't lint.
+Check code style in package.json `devDependencies` or `dependencies`. If a valid style is not found it won't lint.
 
 > Note: This will use the nearest package.json.
 
