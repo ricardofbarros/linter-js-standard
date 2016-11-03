@@ -2,7 +2,7 @@
   "name": "linter-js-standard",
   "main": "./lib/init.js",
   "activationCommands": [],
-  "version": "3.5.0",
+  "version": "3.5.1",
   "description": "Linter plugin for JavaScript Standard Style",
   "keywords": [
     "javascript",
