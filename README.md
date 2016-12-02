@@ -2,7 +2,7 @@ linter-js-standard
 =========================
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-This plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard), [semistandard](https://github.com/Flet/semistandard) or [happiness](https://github.com/JedWatson/happiness).
+This plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard), [semistandard](https://github.com/Flet/semistandard), [happiness](https://github.com/JedWatson/happiness) or [standard-flow](https://github.com/Gozala/standard-flow).
 
 ![demo](https://cloud.githubusercontent.com/assets/6867996/8457085/4bd7575e-2007-11e5-9762-e3f942b78232.gif)
 
@@ -15,7 +15,7 @@ $ apm install linter-js-standard
 ```
 
 ## Features
-- Support `standard`, `semistandard` and `happiness` styles.
+- Support `standard`, `semistandard`, `happiness` and `standard-flow` styles.
 - Support ignore glob patterns in package.json.
 - Support custom parsers in package.json.
 - Support global variables in package.json _(supported by standard and semistandard)_
