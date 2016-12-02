@@ -31,6 +31,7 @@
     "q": "^1.4.1",
     "semistandard": "^9.1.0",
     "standard": "^8.6.0",
+    "standard-flow": "^1.0.0",
     "uber-standard": "^5.1.0"
   },
   "devDependencies": {
