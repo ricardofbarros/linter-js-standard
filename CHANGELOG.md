@@ -2,6 +2,61 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.8.2 (2017-02-21)
+
+### Fixed
+- [Issue #163](https://github.com/ricardofbarros/linter-js-standard/issues/163)
+
+## 3.8.1 (2016-01-26)
+
+### Feature
+- [Support vue files](https://github.com/ricardofbarros/linter-js-standard/commit/f5a7189447748398a7bc3d8c3a4d6a3b0a909615)
+
+## 3.8.0 (2017-01-19)
+
+### Feature
+- [Global support for standard variations](https://github.com/ricardofbarros/linter-js-standard/commit/b863435dbaa7c805d9d33fb2cb595f9f8b3c44c0).
+
+### Fixed
+- [Issue #62](https://github.com/ricardofbarros/linter-js-standard/issues/62)
+
+### Removed
+- find-root package
+
+## 3.7.0 (2016-11-30)
+
+### Changed
+- Dependencies update:
+  - :arrow_up: standard@^8
+
+## 3.6.0 (2016-11-04)
+
+### Changed
+- Dependencies update:
+  - :arrow_up: esprima@^3
+  - :arrow_up: babel-eslint@^7
+  - :arrow_up: happiness@^7
+  - :arrow_up: semistandard@^9
+
+## 3.5.0 (2016-11-03)
+
+### Feature
+- [Issue #100](https://github.com/ricardofbarros/linter-js-standard/issues/100)
+- [Support eslint env config](https://github.com/ricardofbarros/linter-js-standard/commit/e73321391dbcb64f69434e66caeed75c582de631)
+- [Look for linters in deps instead of just devDeps](https://github.com/ricardofbarros/linter-js-standard/commit/3ad0cb21ad5631af6231252f08c2caa4b1f4415a)
+
+### Fixed
+- [Markdown splitter is not greedy](https://github.com/ricardofbarros/linter-js-standard/commit/a18bb24b3cd8760f92178f4cd8c93691d3a0549d)
+- [Getting file paths from symlinks](https://github.com/ricardofbarros/linter-js-standard/commit/76bcbec32b2b518a43e9d0741bb1d508e0ccde0b)
+
+## 3.4.0 (2016-06-21)
+
+### Fixed
+- [Issue #62](https://github.com/ricardofbarros/linter-js-standard/issues/62)
+
+### Removed
+- find-root package
+
 ## 3.3.0 (2016-04-11)
 ### Added
 - [Uses the linter your package depends on rather than the internal dependency whenever possible.](https://github.com/ricardofbarros/linter-js-standard/pull/101)
