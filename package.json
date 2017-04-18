@@ -21,6 +21,8 @@
   "dependencies": {
     "atom-package-deps": "^4.6.0",
     "babel-eslint": "^7.1.0",
+    "escape-html": "^1.0.3",
+    "eslint-rule-documentation": "^1.0.9",
     "esprima": "^3.1.1",
     "happiness": "^10.0.2",
     "loophole": "^1.1.0",
