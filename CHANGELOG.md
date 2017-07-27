@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.9.1 (2017-05-02)
+
+### Fixed
+- [Issue #171](https://github.com/ricardofbarros/linter-js-standard/issues/171)
+
 ## 3.9.0 (2017-02-22)
 
 ### Fixed
