@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.9.2 (2017-07-28)
+
+### Fixed
+- Uncaught `TypeError` when switching back to a file which has been deleted in the background ([`3c9ad13`](https://github.com/ricardofbarros/linter-js-standard/commit/3c9ad13f88853f2f804e9c2f76de011871eb3e60), [#168](https://github.com/ricardofbarros/linter-js-standard/issues/168))
+- “Something went wrong” warning upon opening a file for the first time after opening a new window ([`e51f30b`](https://github.com/ricardofbarros/linter-js-standard/commit/e51f30bedba39d028431f0ac71bb4f7aed6db5cf), [#179](https://github.com/ricardofbarros/linter-js-standard/issues/179))
+
 ## 3.9.1 (2017-05-02)
 
 ### Fixed
