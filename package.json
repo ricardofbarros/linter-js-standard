@@ -23,7 +23,7 @@
     "babel-eslint": "^7.1.0",
     "esprima": "^3.1.1",
     "esprima-fb": "^15001.1001.0-dev-harmony-fb",
-    "happiness": "^7.1.2",
+    "happiness": "^10.0.2",
     "lodash.intersection": "^3.2.0",
     "loophole": "^1.1.0",
     "minimatch": "^2.0.8",
