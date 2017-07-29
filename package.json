@@ -30,6 +30,7 @@
     "q": "^1.4.1",
     "semistandard": "^11.0.0",
     "standard": "^10.0.2",
+    "standard-flow": "^1.0.0",
     "uber-standard": "^5.1.0"
   },
   "standard": {
