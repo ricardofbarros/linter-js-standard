@@ -16,7 +16,7 @@
   "repository": "https://github.com/ricardofbarros/linter-js-standard.git",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0 <2.0.0"
+    "atom": ">=1.14.0 <2.0.0"
   },
   "dependencies": {
     "atom-package-deps": "^4.6.0",
