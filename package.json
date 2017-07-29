@@ -30,7 +30,7 @@
     "pkg-config": "^1.1.0",
     "q": "^1.4.1",
     "semistandard": "^9.1.0",
-    "standard": "^8.6.0",
+    "standard": "^10.0.2",
     "uber-standard": "^5.1.0"
   },
   "standard": {
