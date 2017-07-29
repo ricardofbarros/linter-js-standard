@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.9.3 (2017-07-29)
+
+### Fixed
+- Linting with [standard-flow](https://github.com/Gozala/standard-flow) when it is not locally installed ([`edb3127`](https://github.com/ricardofbarros/linter-js-standard/commit/edb3127b2a199a41f9ddae8c56018322b7191eb8), [#166](https://github.com/ricardofbarros/linter-js-standard/issues/166))
+
 ## 3.9.2 (2017-07-28)
 
 ### Fixed
