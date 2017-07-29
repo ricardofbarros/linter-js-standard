@@ -23,7 +23,6 @@
     "babel-eslint": "^7.1.0",
     "esprima": "^3.1.1",
     "happiness": "^10.0.2",
-    "lodash.intersection": "^3.2.0",
     "loophole": "^1.1.0",
     "minimatch": "^3.0.4",
     "pkg-config": "^1.1.0",
