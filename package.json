@@ -26,7 +26,7 @@
     "happiness": "^10.0.2",
     "lodash.intersection": "^3.2.0",
     "loophole": "^1.1.0",
-    "minimatch": "^2.0.8",
+    "minimatch": "^3.0.4",
     "pkg-config": "^1.1.0",
     "q": "^1.4.1",
     "semistandard": "^11.0.0",
