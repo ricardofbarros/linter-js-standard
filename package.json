@@ -23,6 +23,7 @@
     "babel-eslint": "^7.1.0",
     "eslint-rule-documentation": "^1.0.9",
     "esprima": "^3.1.1",
+    "find-root": "^1.1.0",
     "happiness": "^10.0.2",
     "loophole": "^1.1.0",
     "minimatch": "^3.0.4",
