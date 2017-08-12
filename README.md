@@ -35,6 +35,9 @@ Check code style in package.json `devDependencies` or `dependencies`. If a valid
 
 > Note: This will use the nearest package.json.
 
+### checkForEslintConfig (default: true)
+Check if the project uses ESLint using [detect-eslint-config](https://github.com/chee/detect-eslint-config). If it does it won’t lint.
+
 ### honorStyleSettings (default: true)
 Honors style settings defined in package.json.
 
