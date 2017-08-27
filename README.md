@@ -52,7 +52,7 @@ Switch between standard and semistandard styles.
 If `checkStyleDevDependencies` is true this setting will be **ignored**.
 
 ### showEslintRules (default: false)
-Enable/disable showing the id of the offended eslint rules.
+Enable/disable showing the id of the offended ESLint rules.
 
 Example of messages while showEslintRules is:
 - **true:** Extra semicolon. (semi)
