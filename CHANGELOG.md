@@ -2,6 +2,31 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.0 (2017-08-27)
+
+### Added
+- Link to ESLint rule documentation ([`77d728d`](https://github.com/ricardofbarros/linter-js-standard/commit/77d728de48200d3c6c5a73958898ac7df5fd46b8), [#181](https://github.com/ricardofbarros/linter-js-standard/pull/181))
+- Setting to disable linter if the project already uses ESLint ([`7444f86`](https://github.com/ricardofbarros/linter-js-standard/commit/7444f86b6f738af5831b00949255432294d7981e), [#197](https://github.com/ricardofbarros/linter-js-standard/pull/197), [#194](https://github.com/ricardofbarros/linter-js-standard/issues/194))
+- Show an error notification when installation of linter fails (updated [atom-package-deps](https://github.com/steelbrain/package-deps) to v4, [`6baf9d1`](https://github.com/ricardofbarros/linter-js-standard/commit/6baf9d1992acf48dc0440c4caa5553a5a36cf5e9))
+
+### Changed
+- Convert all warnings to errors (making linter-js-standard more consistent with standard itself) ([`9fc542c`](https://github.com/ricardofbarros/linter-js-standard/commit/9fc542c1449d1c4f57befee130227e0bb81f435b))
+- Considerably improved range highlighting ([`24e76ae`](https://github.com/ricardofbarros/linter-js-standard/commit/24e76aed136435117489fe56519e76041ceb5952), [`e5d31dc`](https://github.com/ricardofbarros/linter-js-standard/commit/e5d31dc0b80139c0eee210bad517aa89394c12cb), [#74](https://github.com/ricardofbarros/linter-js-standard/issues/74))
+- Slightly improved settings’ titles and descriptions ([`cd3b121`](https://github.com/ricardofbarros/linter-js-standard/commit/cd3b121ae02f8f6fe0d320266903c55b7265ff56), [`ac98c09`](https://github.com/ricardofbarros/linter-js-standard/commit/ac98c0996e750cd51e2a005475265d47ad3e4326))
+- Prompt before installing the linter dependency (updated [atom-package-deps](https://github.com/steelbrain/package-deps) to v4, [`6baf9d1`](https://github.com/ricardofbarros/linter-js-standard/commit/6baf9d1992acf48dc0440c4caa5553a5a36cf5e9))
+- Bumped minimum required Atom version to v1.14.0 ([`8522c0c`](https://github.com/ricardofbarros/linter-js-standard/commit/8522c0cf5cc63092ecfbf04d8692675467ffa2e7))
+- Bumped required Linter version to v2 ([`be7b9e9`](https://github.com/ricardofbarros/linter-js-standard/commit/be7b9e97966d846baf2077b8e4eb6728517fac99), [`c7b2213`](https://github.com/ricardofbarros/linter-js-standard/commit/c7b22130fa3a95921dd33ef3248890bb55654114))
+- Updated the bundled `standard` to v10 ([`53ede59`](https://github.com/ricardofbarros/linter-js-standard/commit/53ede59e34ab8223404ca8c95bd4568bc3c0ccc8))
+- Updated the bundled `semistandard` to v11 ([`f610c1d`](https://github.com/ricardofbarros/linter-js-standard/commit/f610c1de8fce62dcfb13d0d96cc1ff479948072b))
+- Updated the bundled `happiness` to v10 ([`ca413a2`](https://github.com/ricardofbarros/linter-js-standard/commit/ca413a2b106809830ccdc1de9195190c011a0cbb))
+
+### Removed
+- Support for [Esprima-FB](https://github.com/facebookarchive/esprima) ([`cc42217`](https://github.com/ricardofbarros/linter-js-standard/commit/cc4221746c1085232b18431f142a9638bc33e557))
+
+### Fixed
+- Issues when installing linter on newer Atom versions (updated [atom-package-deps](https://github.com/steelbrain/package-deps) to v4, [`6baf9d1`](https://github.com/ricardofbarros/linter-js-standard/commit/6baf9d1992acf48dc0440c4caa5553a5a36cf5e9)) ([#187](https://github.com/ricardofbarros/linter-js-standard/issues/187))
+- Re-use last messages if linter throws an error (avoids “Linter Result must be an Array” error) ([`32e8b75`](https://github.com/ricardofbarros/linter-js-standard/commit/32e8b7507b53eb56abc71e999892de813dd560c2))
+
 ## 3.9.3 (2017-07-29)
 
 ### Fixed
