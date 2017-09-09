@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.1 (2017-09-09)
+
+### Fixed
+- Errors when the editor’s contents were modified while the linter was running ([`2d6af60`](https://github.com/ricardofbarros/linter-js-standard/commit/2d6af609103c690fa82c063604f49b14b48ac4cd), [#200](https://github.com/ricardofbarros/linter-js-standard/issues/200))
+
 ## 4.0.0 (2017-08-27)
 
 ### Added
