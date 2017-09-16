@@ -2,10 +2,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.2 (2017-09-16)
+
+### Fixed
+- Errors when the editor’s contents were modified while the linter was running ([`2d6af60`](https://github.com/ricardofbarros/linter-js-standard/commit/2d6af609103c690fa82c063604f49b14b48ac4cd), [`05f787f`](https://github.com/ricardofbarros/linter-js-standard/commit/05f787fc6a60ba62116900307e8109cb499d1aef), [#200](https://github.com/ricardofbarros/linter-js-standard/issues/200))
+- Not ignoring whole directories when specified in `standard.ignore` in `package.json` (switched to [ignore](https://github.com/kaelzhang/node-ignore), [`f7481f5`](https://github.com/ricardofbarros/linter-js-standard/commit/f7481f5a89093ee983f2d11cc24dd9b6648533b0)) ([#206](https://github.com/ricardofbarros/linter-js-standard/issues/206))
+- Other ignore-related fixes (see [Why another ignore?](https://github.com/kaelzhang/node-ignore/blob/3.3.5/README.md#why-another-ignore)) (switched to [ignore](https://github.com/kaelzhang/node-ignore), [`f7481f5`](https://github.com/ricardofbarros/linter-js-standard/commit/f7481f5a89093ee983f2d11cc24dd9b6648533b0))
+
 ## 4.0.1 (2017-09-09)
 
 ### Fixed
-- Errors when the editor’s contents were modified while the linter was running ([`2d6af60`](https://github.com/ricardofbarros/linter-js-standard/commit/2d6af609103c690fa82c063604f49b14b48ac4cd), [#200](https://github.com/ricardofbarros/linter-js-standard/issues/200))
+- ~~Errors when the editor’s contents were modified while the linter was running ([`2d6af60`](https://github.com/ricardofbarros/linter-js-standard/commit/2d6af609103c690fa82c063604f49b14b48ac4cd), [#200](https://github.com/ricardofbarros/linter-js-standard/issues/200))~~ Did not actually fix the issue, see [#200 (comment)](https://github.com/ricardofbarros/linter-js-standard/issues/200#issuecomment-328751526)
 
 ## 4.0.0 (2017-08-27)
 
