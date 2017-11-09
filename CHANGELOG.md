@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.3 (2017-11-09)
+
+### Fixed
+- `envs` not being recognized in `package.json` ([`7f4cda6`](https://github.com/ricardofbarros/linter-js-standard/commit/7f4cda6c52350b23d152fea3c81d059fe92a69cf))
+- `envs` not being recognized when specified as an object ([`0f1a5ab`](https://github.com/ricardofbarros/linter-js-standard/commit/0f1a5abdcbe1c5fcc8af0d89249d778098933b3d), [#209](https://github.com/ricardofbarros/linter-js-standard/issues/209))
+
 ## 4.0.2 (2017-09-16)
 
 ### Fixed
