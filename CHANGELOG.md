@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.1.0 (2017-11-19)
+
+### Added
+- `filename` is now passed to `lintText()` which is required by some linters and ESLint plugins ([`64e11fd`](https://github.com/ricardofbarros/linter-js-standard/commit/64e11fd2b71f3d43f029ca34c6f743fa2a876cef), [#213](https://github.com/ricardofbarros/linter-js-standard/pull/213), [#212](https://github.com/ricardofbarros/linter-js-standard/issues/212))
+
 ## 4.0.3 (2017-11-09)
 
 ### Fixed
