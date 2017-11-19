@@ -182,7 +182,7 @@ Partially suggested in [issue #38](https://github.com/ricardofbarros/linter-js-s
 - Dependencies update
   - :arrow_up: atotm-linter@^3.0.0
 
-### Fixed  
+### Fixed
 - Fix permanently [issue #30](https://github.com/ricardofbarros/linter-js-standard/issues/30)
 
 ## 2.1.0 (2015-07-24)
