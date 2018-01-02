@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.2.0 (2018-01-02)
+
+The change in [v4.1.0](#410-2017-11-19) turned out to be backwards-incompatible. Therefore, v4.2.0 reverts this change. It will be added back in the next major release.
+
+### Removed
+- `filename` is no longer passed to `lintText()` ([`2d71917`](https://github.com/ricardofbarros/linter-js-standard/commit/2d719175a161ec28a2e5cc3822e81dc580e36d1a), [#214](https://github.com/ricardofbarros/linter-js-standard/issues/214))
+
 ## 4.1.0 (2017-11-19)
 
 ### Added
