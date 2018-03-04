@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 5.0.0 (2018-03-04)
+
+### Added
+- `filename` is now passed to `lintText()` which is required by some linters and ESLint plugins (see also [v4.1.0](#410-2017-11-19) and [v4.2.0](#420-2018-01-02)) ([`64e11fd`](https://github.com/ricardofbarros/linter-js-standard/commit/64e11fd2b71f3d43f029ca34c6f743fa2a876cef), [#213](https://github.com/ricardofbarros/linter-js-standard/pull/213), [#212](https://github.com/ricardofbarros/linter-js-standard/issues/212))
+
+### Changed
+- No longer lints hidden files and folders by default (see [#214](https://github.com/ricardofbarros/linter-js-standard/issues/214#issuecomment-350304776))
+- Updated the bundled `standard` to v11 ([`df21570`](https://github.com/ricardofbarros/linter-js-standard/commit/df2157019590852d76e55dba36a39fef6028ddd8))
+- Updated the bundled `babel-eslint` to v8 ([`3338959`](https://github.com/ricardofbarros/linter-js-standard/commit/33389597cef9a3b3952ad6b0c438a80daf4da482))
+- Updated the bundled `esprima` to v4 ([`1c99b14`](https://github.com/ricardofbarros/linter-js-standard/commit/1c99b140e93799a81cd1137012b6d0abd63ac89b))
+
+### Removed
+- Support for [uber-standard](https://github.com/uber/standard) ([`eea8bfe`](https://github.com/ricardofbarros/linter-js-standard/commit/eea8bfe8b08c724c5359c25c3dace0b0d5dd33b1))
+
+### Fixed
+- `TypeError` when linting hidden files ([`f553b49`](https://github.com/ricardofbarros/linter-js-standard/commit/f553b4997e779725e565befdf73a1891d5907ac9), [#214](https://github.com/ricardofbarros/linter-js-standard/issues/214))
+
 ## 4.2.0 (2018-01-02)
 
 The change in [v4.1.0](#410-2017-11-19) turned out to be backwards-incompatible. Therefore, v4.2.0 reverts this change. It will be added back in the next major release.
