@@ -1,84 +1,53 @@
-linter-js-standard
-=========================
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+# linter-js-standard
 
-This plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface for error/warning messages from [standard](https://github.com/feross/standard), as well as variations of standard such as [semistandard](https://github.com/Flet/semistandard) and [happiness](https://github.com/JedWatson/happiness).
+![apm](https://img.shields.io/apm/v/linter-js-standard.svg)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-![demo](https://cloud.githubusercontent.com/assets/6867996/8457085/4bd7575e-2007-11e5-9762-e3f942b78232.gif)
+> [Linter](https://github.com/steelbrain/linter) for [JavaScript Standard Style](https://standardjs.com) and its forks.
+
+![](screenshot.png)
+
+## Highlights
+
+- Supports [JavaScript Standard style](https://standardjs.com) and [some of its forks](#default-style).
+- Lints JavaScript within HTML and Markdown documents.
+- Links to ESLint’s rule documentation.
+- Runs globally, if desired.
 
 ## Installation
-Linter package must be installed in order to use this plugin. If Linter is not installed, please follow the instructions [here](https://github.com/AtomLinter/Linter).
 
-### Plugin installation
-```
+```console
 $ apm install linter-js-standard
 ```
 
-## Features
-- Support `standard`, `semistandard` and `happiness` styles.
-- Support ignore glob patterns in package.json.
-- Support custom parsers in package.json.
-- Support global variables in package.json _(supported by standard and semistandard)_
-- Support fenced code lint in markdown files
-
-Custom parsers currently supported:
-- esprima
-- esprima-fb
-- babel-eslint
-
-> Note: If a custom parser is missing from this list please make a PR by adding the missing parser to package.json dependencies.
+Alternatively, go to Settings → Install and search for `linter-js-standard`.
 
 ## Settings
 
-### checkStyleDevDependencies (default: false)
-Check code style in package.json `devDependencies` or `dependencies`. If a valid style is not found it won't lint.
+### Default style
 
-> Note: This will use the nearest package.json.
+Default global style when none is installed locally. Choose between:
 
-### checkForEslintConfig (default: true)
-Check if the project uses ESLint using [detect-eslint-config](https://github.com/chee/detect-eslint-config). If it does it won’t lint.
+- [JavaScript Standard Style (`standard`)](https://standardjs.com)
+- [JavaScript Semi-Standard Style (`semistandard`)](https://github.com/Flet/semistandard)
+- [JavaScript Happiness Style (`happiness`)](https://github.com/JedWatson/happiness)
 
-### honorStyleSettings (default: true)
-Honors style settings defined in package.json.
+### Only lint if installed locally
 
-Current style settings supported:
-- `ignore`
-- `parser`
+Only lint if `standard` (or one of the [other styles](#default-style)) is installed as a dependency (that is, if it is listed in `devDependencies` or `dependencies` in `package.json`).
 
-> Note: This will use the nearest package.json.
+### Show ESLint rule ID
 
-### style (default: standard)
-Switch between standard and semistandard styles.
-If `checkStyleDevDependencies` is true this setting will be **ignored**.
+Show ESLint’s rule ID in the message description. For example: `Extra semicolon. (semi)`.
 
-### showEslintRules (default: false)
-Enable/disable showing the id of the offended ESLint rules.
+### Skip if ESLint is installed locally
 
-Example of messages while showEslintRules is:
-- **true:** Extra semicolon. (semi)
-- **false:** Extra semicolon.
+Skip linting if ESLint is installed locally.
 
-### lintMarkdownFiles (default: false)
-Lint markdown fenced code blocks.
+### Lint HTML documents
 
-### Global Variable Support
-To have the linter not warn about undeclared variables when using global variables, honorStyleSettings has to be checked/true and a "globals" section has to be added to package.json:
-```
-"semistandard": {
-    "globals": [
-      "var1",
-      "var2"
-    ]
-  }
-  OR
-"standard": {
-    "globals": [
-      "var1",
-      "var2"
-    ]
-  }
-  ```
-Also see https://github.com/feross/standard#i-use-a-library-that-pollutes-the-global-namespace-how-do-i-prevent-variable-is-not-defined-errors.
+Lint JavaScript code within `<script>` tags in HTML documents.
 
-## License
-MIT
+### Lint Markdown documents
+
+Lint JavaScript code blocks within Markdown documents.
