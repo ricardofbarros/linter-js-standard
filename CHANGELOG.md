@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 5.1.0 (2018-06-22)
+
+### Added
+- Support for Atom’s experimental [Tree-sitter](https://github.com/tree-sitter/tree-sitter) parsing system ([`46c8038`](https://github.com/ricardofbarros/linter-js-standard/commit/46c803841d61a720aa45d72234fe7ac8267c531b))
+
 ## 5.0.0 (2018-03-04)
 
 ### Added
