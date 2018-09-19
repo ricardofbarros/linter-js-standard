@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 6.0.0 (2018-09-19)
+
+### Changed
+- Updated the bundled `standard` to v12 ([`b04f45b`](https://github.com/ricardofbarros/linter-js-standard/commit/b04f45b643b9e54db7322fb45ca0cebb0d37b425), [#221](https://github.com/ricardofbarros/linter-js-standard/pull/221))
+- Revamped settings ([`bfc0cfc`](https://github.com/ricardofbarros/linter-js-standard/commit/bfc0cfcd222d8579c68074b834fa91bc8f55c8e2), [`0ce0803`](https://github.com/ricardofbarros/linter-js-standard/commit/0ce0803f615ad9ffb94c6086becc16ef09bd5595))
+
+### Removed
+- Setting to disable style-specific settings in `package.json` (it now always honors settings in `package.json`) ([`e87d36b`](https://github.com/ricardofbarros/linter-js-standard/commit/e87d36beb46ce274bc97b68e79be87a0acdb9826))
+- Support for [standard-flow](https://github.com/Gozala/standard-flow) ([`0df4d9b`](https://github.com/ricardofbarros/linter-js-standard/commit/0df4d9b802940b23516d7bb65f7cbf6ca8365068))
+
+### Fixed
+- Completely ignoring projects when they are inside a hidden folder ([`5b05e68`](https://github.com/ricardofbarros/linter-js-standard/commit/5b05e688090e0c4abfa36c1cc2833321dd6a0a10), [#222](https://github.com/ricardofbarros/linter-js-standard/issues/222))
+
 ## 5.1.0 (2018-06-22)
 
 ### Added
