@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 6.1.0 (2018-11-29)
+
+### Added
+- Support for [TypeScript](https://www.typescriptlang.org) ([`488c1c0`](https://github.com/ricardofbarros/linter-js-standard/commit/488c1c0a5eb56beed9aff935f005f988f2512166), [#225](https://github.com/ricardofbarros/linter-js-standard/issues/225))
+
 ## 6.0.0 (2018-09-19)
 
 ### Changed
