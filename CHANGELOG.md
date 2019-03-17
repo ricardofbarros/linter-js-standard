@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 6.1.1 (2019-03-17)
+
+### Fixed
+- `ENOENT` error when the previous working directory could no longer be found ([`922125f`](https://github.com/ricardofbarros/linter-js-standard/commit/922125f13e9226803d0e6231e635541b142b7ef6), [#226](https://github.com/ricardofbarros/linter-js-standard/issues/226))
+
 ## 6.1.0 (2018-11-29)
 
 ### Added
