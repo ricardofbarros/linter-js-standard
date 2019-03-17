@@ -23,7 +23,7 @@
     "atom-package-deps": "^4.6.2",
     "babel-eslint": "^10.0.1",
     "detect-eslint-config": "^0.5.7",
-    "eslint-rule-documentation": "^1.0.20",
+    "eslint-rule-documentation": "^1.0.22",
     "esprima": "^4.0.0",
     "happiness": "^10.0.2",
     "ignore": "^3.3.7",
