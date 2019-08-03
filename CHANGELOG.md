@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 6.1.2 (2019-08-03)
+
+### Fixed
+- “Cannot find module” errors when using `standard` v13 or later ([`1dbc2d6`](https://github.com/ricardofbarros/linter-js-standard/commit/1dbc2d63d105bd3b1579a40f774953568d944ce3), [#231](https://github.com/ricardofbarros/linter-js-standard/issues/231))
+
 ## 6.1.1 (2019-03-17)
 
 ### Fixed
