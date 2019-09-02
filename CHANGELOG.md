@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 7.0.0 (2019-09-02)
+
+### Changed
+- Updated the bundled `standard` to v14 ([`0604e52`](https://github.com/ricardofbarros/linter-js-standard/commit/0604e52883e76602747ccab8da891f960d02c4aa))
+- Updated the bundled `semistandard` to v14 ([`a21efac`](https://github.com/ricardofbarros/linter-js-standard/commit/a21efac1a4e42333466eb26533ee47a0dd8a9131))
+
 ## 6.1.2 (2019-08-03)
 
 ### Fixed
