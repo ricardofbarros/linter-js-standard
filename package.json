@@ -29,7 +29,7 @@
     "ignore": "^5.0.5",
     "loophole": "^1.1.0",
     "pkg-config": "^1.1.1",
-    "semistandard": "^13.0.0",
+    "semistandard": "^14.0.1",
     "standard": "^14.1.0"
   },
   "standard": {
