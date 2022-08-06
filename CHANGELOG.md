@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 8.0.0 (2022-08-06)
+
+### Fixed
+- `TypeError` under certain circumstances on path-less files ([`7780e7c`](https://github.com/ricardofbarros/linter-js-standard/commit/7780e7cede7a277bbe3c886b51477bd022a86b9a))
+
+### Removed
+- Support for [happiness](https://github.com/JedWatson/happiness) ([`97b7153`](https://github.com/ricardofbarros/linter-js-standard/commit/97b715369872e624346a34be90000e590dbab028))
+
 ## 7.0.0 (2019-09-02)
 
 ### Changed
