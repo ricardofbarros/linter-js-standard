@@ -25,7 +25,6 @@
     "detect-eslint-config": "^0.5.7",
     "eslint-rule-documentation": "^1.0.22",
     "esprima": "^4.0.0",
-    "happiness": "^10.0.2",
     "ignore": "^5.0.5",
     "loophole": "^1.1.0",
     "pkg-config": "^1.1.1",

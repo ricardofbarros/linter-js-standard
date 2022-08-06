@@ -30,7 +30,6 @@ Default global style when none is installed locally. Choose between:
 
 - [JavaScript Standard Style (`standard`)](https://standardjs.com)
 - [JavaScript Semi-Standard Style (`semistandard`)](https://github.com/Flet/semistandard)
-- [JavaScript Happiness Style (`happiness`)](https://github.com/JedWatson/happiness)
 
 ### Only lint if installed locally
 
